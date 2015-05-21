@@ -1,1 +1,1 @@
-<h1>Learning DevOps</h1>
+<h1>Learning DevOps | Rackspace Cloud</h1>
