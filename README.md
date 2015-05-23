@@ -1,2 +1,2 @@
-<h1>Learning DevOps | Rackspace Cloud</h1>
+<h1>Learning DevOps | Cloud Computing</h1>
 <h6>Suppporting Contributors: Juan Lopez & Andres Galindo
