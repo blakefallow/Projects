@@ -1,0 +1,6 @@
+[submodule "FlexMarket"]
+	path = FlexMarket
+	url = git@github.com:FlexShopper/FlexMarket.git
+[submodule "FlexMarketWeb"]
+	path = FlexMarketWeb
+	url = git@github.com:FlexShopper/FlexMarketWeb.git
