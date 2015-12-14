@@ -15,6 +15,12 @@ mongorestore -d FlexMarket ./Mongo/FlexMarket --host=192.168.99.100 --port=32824
 ```
 
 ####  Usefull Commands
+```
+curl -L https://github.com/docker/machine/releases/download/v0.5.2/docker-machine_darwin-amd64.zip >machine.zip && \
+    unzip machine.zip && \
+    rm machine.zip && \
+    mv docker-machine* /usr/local/bin
+```
 
 ```
 eval "$(docker-machine env default)"
