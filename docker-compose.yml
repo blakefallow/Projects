@@ -1,5 +1,5 @@
 api:
-  build: ./FlexMarket
+  image: 'flexhub/flexbox_api:latest'
   volumes:
     - "/Users/jstein/workspace/FlexBox/FlexMarket:/src"
   ports:
@@ -10,7 +10,7 @@ api:
     - "mongo"
 
 web:
-  build: ./FlexMarketWeb
+  image: 'flexhub/flexbox_web:latest'
   volumes:
     - "/Users/jstein/workspace/FlexBox/FlexMarketWeb:/src"
   ports:
