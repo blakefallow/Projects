@@ -1,23 +1,25 @@
-api:
-  image: 'flexhub/flexbox_api:latest'
-  volumes:
-    - "/Users/jstein/workspace/FlexBox/FlexMarket:/src"
-  ports:
-    - "3000"
-  links:
-    - "elasticsearch"
-    - "redis"
-    - "mongo"
-
 web:
-  image: 'flexhub/flexbox_web:latest'
+  #image: 'flexhub/flexbox_web:latest'
+  build: ./FlexMarketWeb
   volumes:
-    - "/Users/jstein/workspace/FlexBox/FlexMarketWeb:/src"
+    - "~/workspace/FlexBox/FlexMarketWeb:/src"
   ports:
     - "8080"
     - "1234"
   links:
     - "api"
+    - "redis"
+    - "mongo"
+
+api:
+  #image: 'flexhub/flexbox_api:latest'
+  build: ./FlexMarket
+  volumes:
+    - "~/workspace/FlexBox/FlexMarket:/src"
+  ports:
+    - "3000"
+  links:
+    - "elasticsearch"
     - "redis"
     - "mongo"
 
