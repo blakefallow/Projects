@@ -2,6 +2,20 @@
 
 The new local environment relies on docker-machine to setup a vm running docker and docker-compose to orchastrate the connection of services in our platform. Install [kitematic] if your on mac. Install docker-machine and set up a default machine if Ubuntu.
 
+### Install NVM and node:0.12
+```
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+source ~/.profile
+nvm ls-remote
+nvm install 0.12
+nvm alias default 0.12
+nvm use default
+```
+
+### Install Bower and Gulp
+npm install bower -g
+npm install gulp -g
+
 #### Start Your Engines
 ```
 git clone git@github.com:FlexShopper/FlexBox.git
@@ -13,9 +27,6 @@ docker-compose up
 # Look up mongo host and port in kitematic and replace below
 mongorestore -d FlexMarket ./Mongo/FlexMarket --host=192.168.99.100 --port=32824
 ```
-
-### Install NVM and node:0.12
-
 
 ####  Usefull Commands
 ```
@@ -29,6 +40,10 @@ Set environment variables to connect docker client to the docker api on your VM
 ```
 eval "$(docker-machine env default)"
 ```
+
+
+
+
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does it's job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 

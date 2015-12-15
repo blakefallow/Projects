@@ -13,5 +13,5 @@ npm install
 cd client npm install && bower install 
 eval "$(docker-machine env default)"
 
-cd ../.. && docker-compose build
+cd ../.. && docker-compose build && docker-compose up -d && docker-compose ps
 
