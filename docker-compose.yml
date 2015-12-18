@@ -30,9 +30,11 @@ elasticsearch:
   image: 'flexhub/flexbox_elasticsearch:latest'
 
 mongo:
-  image: mongo
+  image: 'flexhub/flexbox_mongo:latest'
   ports: 
     - "27017"
 
 redis: 
   image: redis
+  ports: 
+    - "6379"
