@@ -1,8 +1,10 @@
 # Local Environment - Setup instructions
 
-The new local environment relies on docker-machine to setup a vm running docker and docker-compose to orchastrate the connection of services in our platform. Install [kitematic] if your on mac. Install docker-machine and set up a default machine if Ubuntu.
+This environment relies on docker and docker-compose. If using a mac you will also require [homebrew], [docker-osx-dev], and [docker-machine]. [kitematic] is optional, but recomended if you use a mac.
+#### Install [Homebrew]
+```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
-### Install NVM and node:0.12
+#### Install NVM and node:0.12
 ```
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 source ~/.profile
@@ -12,7 +14,18 @@ nvm alias default 0.12
 nvm use default
 ```
 
-### Install Bower and Gulp
+#### Install docker-machine v0.5.2
+```
+curl -L https://github.com/docker/machine/releases/download/v0.5.2/docker-machine_darwin-amd64.zip >machine.zip && \
+    unzip machine.zip && \
+    rm machine.zip && \
+    mv docker-machine* /usr/local/bin
+```
+#### Create a VM to host docker with docker-machine
+```docker-machine create --driver virtualbox --virtualbox-memory "4096" default```
+
+
+#### Install Bower and Gulp
 npm install bower -g
 npm install gulp -g
 
@@ -25,21 +38,22 @@ cd Flexbox
 # update FlexMarket/Dockerfile and FlexMarketWeb/Dockerfile with your own path
 docker-compose up
 # Look up mongo host and port in kitematic and replace below
-mongorestore -d FlexMarket ./Mongo/FlexMarket --host=192.168.99.100 --port=32824
+mongorestore -d FlexMarket ./Mongo/FlexMarket --host=192.168.99.100 --port=XXXX
 ```
 
 ####  Usefull Commands
 ```
-curl -L https://github.com/docker/machine/releases/download/v0.5.2/docker-machine_darwin-amd64.zip >machine.zip && \
-    unzip machine.zip && \
-    rm machine.zip && \
-    mv docker-machine* /usr/local/bin
-```
+# Sometimes the vm kitematic creates by has issues with mapping drives and space for building images gets limited to 1.9GB then it fails
+# Build a docker-machine manually in virtualbox and set the memory
+docker-machine create --driver virtualbox --virtualbox-memory "4096" default
 
-Set environment variables to connect docker client to the docker api on your VM
-```
+# Load data onto mongo docker container ( NOTE: IP and Port may differ )
+cd mongo && mongorestore -d FlexMarket ./FlexMarket --host=192.168.99.100 --port=XXXX 
+
+#Set environment variables to connect docker client to the docker api on your VM
 eval "$(docker-machine env default)"
 ```
+
 
 
 
@@ -48,4 +62,7 @@ eval "$(docker-machine env default)"
 
 
    [kitematic]: <https://kitematic.com>
+   [Homebrew]: <https://brew.sh>
+   [docker-osx-dev]: <https://github.com/brikis98/docker-osx-dev>
+   [docker-machine]: <https://docs.docker.com/machine/install-machine/>
 
