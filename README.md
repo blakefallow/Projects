@@ -24,6 +24,14 @@ curl -L https://github.com/docker/machine/releases/download/v0.5.2/docker-machin
 #### Create a VM to host docker with docker-machine
 ```docker-machine create --driver virtualbox --virtualbox-memory "4096" default```
 
+#### Install docker-osx-dev 
+```
+curl -o /usr/local/bin/docker-osx-dev https://raw.githubusercontent.com/brikis98/docker-osx-dev/master/src/docker-osx-dev
+chmod +x /usr/local/bin/docker-osx-dev
+docker-osx-dev install
+cd flexbox
+docker-osx-dev #This process must run in the background
+```
 
 #### Install Bower and Gulp
 npm install bower -g
