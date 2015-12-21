@@ -55,6 +55,9 @@ Found VirtualBox shared folders on your Boot2Docker VM. These may void any perfo
 Would you like this script to remove them?
 ```
 
+The final step which syncs your local drives to the docker-machine takes several minutes.
+
+
 #### Install Bower and Gulp
 npm install bower -g
 npm install gulp -g
