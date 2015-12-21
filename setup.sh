@@ -24,9 +24,7 @@ docker-machine rm default
 docker-machine create --driver virtualbox --virtualbox-memory "4096" default
 eval "$(docker-machine env default)"
 docker-osx-dev install
-docker-osx-dev #This process must run in the background
-echo "\n\nBUILDING ENVIRONMNET\n\n"
+docker-osx-dev
+#docker-osx-dev > docker-osx-dev.out &
 #How do I not run the next 2 lines if on Ubuntu
-
-cd  && docker-compose build && docker-compose up -d && docker-compose ps
 
