@@ -35,6 +35,27 @@ cd flexbox
 docker-osx-dev #This process must run in the background
 ```
 
+Note: you may receive the following warning message, which you can safely ignore:
+
+```
+Warning: Could not create link for homebrew/dupes/gdb, as it
+conflicts with Homebrew/homebrew/gdb. You will need to use the
+fully-qualified name when referring this formula, e.g.
+brew install homebrew/dupes/gdb
+```
+
+If you get the following msg, this means you have not set certain env variables that are required for setup. Please add them manually by running `eval "$(docker-machine env <machine-name>)"` or add that statement to your .bashrc/.bash_profile file.
+```
+error in run: Failed to initialize machine "boot2docker-vm": exit status 1
+```
+
+You may / should also receive the msg. This is for folders mounted on your current machine, you can safely answer yes and continue through the process.
+```
+Found VirtualBox shared folders on your Boot2Docker VM. These may void any performance benefits from using docker-osx-dev:
+<some-folders>
+Would you like this script to remove them?
+```
+
 #### Install Bower and Gulp
 npm install bower -g
 npm install gulp -g
