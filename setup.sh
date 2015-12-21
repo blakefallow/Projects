@@ -25,14 +25,14 @@ cd ../..
 docker-machine rm default
 docker-machine create --driver virtualbox --virtualbox-memory "4096" default
 eval "$(docker-machine env default)"
-echo "\n!\n!\n!\nPlease answer 'yes' to the next prompt.\n!\n!\n!\n"
+printf "\n!\n!\n!\nPlease answer 'yes' to the next prompt.\n!\n!\n!\n"
 docker-osx-dev install
-echo "\n\n\n\nRunning docker-osx-dev in the background." 
-echo "When the repos are finished syncing to the VM the script will continue to watch your file system and sync changes to the VM\n\n\n\n"
+printf "\n\n\n\nRunning docker-osx-dev in the background." 
+printf "When the repos are finished syncing to the VM the script will continue to watch your file system and sync changes to the VM\n\n\n\n"
 docker-osx-dev > /tmp/docker-osx-dev.out &
 tail -f /tmp/docker-osx-dev.out | while read LOGLINE
 do
    [[ "${LOGLINE}" == *"Watching"* ]] && pkill -P $$ tail
 done
-echo "\n\n\n\nRunning docker-compose up\n\n\n\n"
+printf "\n\n\n\nRunning docker-compose up\n\n\n\n"
 docker-compose up
