@@ -60,6 +60,18 @@ cd mongo && mongorestore -d FlexMarket ./FlexMarket --host=192.168.99.100 --port
 
 #Set environment variables to connect docker client to the docker api on your VM
 eval "$(docker-machine env default)"
+
+# Stop commit and push mongo container image to dockerhub to save data
+MONGO_CONTAINER_ID=`docker ps |grep mongo | awk '{print $1;}'`
+docker stop $MONGO_CONTAINER_ID && docker commit -m "new data" $MONGO_CONTAINER_ID flexhub/flexbox_mongo:latest
+docker login 
+docker push flexhub/flexbox_mongo:latest
+
+# Stop commit and push elasticsearch container image to dockerhub to save data
+ELS_CONTAINER_ID=`docker ps |grep elasticsearch | awk '{print $1;}'`
+docker stop $ELS_CONTAINER_ID && docker commit -m "new data" $ELS_CONTAINER_ID flexhub/flexbox_elasticsearch:latest
+docker login 
+docker push flexhub/flexbox_elasticsearch:latest
 ```
 
 
