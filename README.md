@@ -24,6 +24,8 @@ curl -L https://github.com/docker/machine/releases/download/v0.5.2/docker-machin
 #### Create a VM to host docker with docker-machine
 ```docker-machine create --driver virtualbox --virtualbox-memory "4096" default```
 
+If you receive the msg `host already exists: default`, it indicates you already have a machine with this name. If you are having problems with the existing machine and want to replace it, run `docker-machine rm default`, otherwise if you already have a working docker-machine, you do not need to worry about running the `docker-machine create` cmd.
+
 #### Install docker-osx-dev 
 ```
 curl -o /usr/local/bin/docker-osx-dev https://raw.githubusercontent.com/brikis98/docker-osx-dev/master/src/docker-osx-dev
@@ -32,6 +34,29 @@ docker-osx-dev install
 cd flexbox
 docker-osx-dev #This process must run in the background
 ```
+
+Note: you may receive the following warning message, which you can safely ignore:
+```
+Warning: Could not create link for homebrew/dupes/gdb, as it
+conflicts with Homebrew/homebrew/gdb. You will need to use the
+fully-qualified name when referring this formula, e.g.
+brew install homebrew/dupes/gdb
+```
+
+Note: If you get the following msg, this means you have not set certain env variables that are required for setup. Please add them manually by running `eval "$(docker-machine env <machine-name>)"` or add that statement to your .bashrc/.bash_profile file.
+```
+error in run: Failed to initialize machine "boot2docker-vm": exit status 1
+```
+
+Note: You may / should also receive the following msg. This is for folders mounted on your current machine, you can safely answer yes and continue through the process.
+```
+Found VirtualBox shared folders on your Boot2Docker VM. These may void any performance benefits from using docker-osx-dev:
+<some-folders>
+Would you like this script to remove them?
+```
+
+The final step which syncs your local drives to the docker-machine takes several minutes.
+
 
 #### Install Bower and Gulp
 npm install bower -g
