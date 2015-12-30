@@ -12,7 +12,7 @@ cd FlexMarketWeb && git checkout development
 npm install
 gulp
 
-cd ../FlexMarket && git checkout docker_compose
+cd ../FlexMarket && git checkout development
 npm install 
 
 cd client 
