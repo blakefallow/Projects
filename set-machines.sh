@@ -1,27 +1,4 @@
 #!/usr/bin/env bash
-rm -f /tmp/flexmarket_api_gulp.out /tmp/docker-osx-dev.out
-
-curl -o /usr/local/bin/docker-osx-dev https://raw.githubusercontent.com/brikis98/docker-osx-dev/master/src/docker-osx-dev
-chmod +x /usr/local/bin/docker-osx-dev
-
-git clone git@github.com:FlexShopper/FlexMarketWeb.git
-git clone git@github.com:FlexShopper/FlexMarket.git
-
-
-cd FlexMarketWeb && git checkout development
-npm install
-gulp
-
-cd ../FlexMarket && git checkout docker_compose
-npm install 
-
-cd client 
-npm install 
-bower install 
-
-gulp > /tmp/flexmarket_api_gulp.out &
-
-cd ../..
 docker-machine rm default &&
 docker-machine create --driver virtualbox --virtualbox-memory "4096" default &&
 printf "\n\n\n\nCreating symlink to machines\n\n\n\n"
