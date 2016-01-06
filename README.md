@@ -64,14 +64,11 @@ npm install gulp -g
 
 #### Start Your Engines
 ```
+mkdir ~/workspace
+cd ~/workspace
 git clone git@github.com:FlexShopper/FlexBox.git
 cd Flexbox
-./setup.sh
-# Make sure the FlexMarket and FlexBox repos are on the dockercompose branch until they are merged into master
-# update FlexMarket/Dockerfile and FlexMarketWeb/Dockerfile with your own path
-docker-compose up
-# Look up mongo host and port in kitematic and replace below
-mongorestore -d FlexMarket ./Mongo/FlexMarket --host=192.168.99.100 --port=XXXX
+./setup.sh or ./setup.ubuntu.sh
 ```
 
 ####  Usefull Commands
