@@ -12,7 +12,11 @@ nvm ls-remote
 nvm install 0.12
 nvm alias default 0.12
 nvm use default
+# Install Bower and Gulp
+npm install bower -g
+npm install gulp -g
 ```
+
 
 #### Install docker-machine v0.5.2
 ```
@@ -21,20 +25,6 @@ curl -L https://github.com/docker/machine/releases/download/v0.5.2/docker-machin
     rm machine.zip && \
     mv docker-machine* /usr/local/bin
 ```
-#### Create a VM to host docker with docker-machine
-```docker-machine create --driver virtualbox --virtualbox-memory "4096" default```
-
-If you receive the msg `host already exists: default`, it indicates you already have a machine with this name. If you are having problems with the existing machine and want to replace it, run `docker-machine rm default`, otherwise if you already have a working docker-machine, you do not need to worry about running the `docker-machine create` cmd.
-
-#### Install docker-osx-dev 
-```
-curl -o /usr/local/bin/docker-osx-dev https://raw.githubusercontent.com/brikis98/docker-osx-dev/master/src/docker-osx-dev
-chmod +x /usr/local/bin/docker-osx-dev
-docker-osx-dev install
-cd flexbox
-docker-osx-dev #This process must run in the background
-```
-
 Note: you may receive the following warning message, which you can safely ignore:
 ```
 Warning: Could not create link for homebrew/dupes/gdb, as it
@@ -57,10 +47,6 @@ Would you like this script to remove them?
 
 The final step which syncs your local drives to the docker-machine takes several minutes.
 
-
-#### Install Bower and Gulp
-npm install bower -g
-npm install gulp -g
 
 #### Start Your Engines
 ```
@@ -107,4 +93,18 @@ docker push flexhub/flexbox_elasticsearch:latest
    [Homebrew]: <https://brew.sh>
    [docker-osx-dev]: <https://github.com/brikis98/docker-osx-dev>
    [docker-machine]: <https://docs.docker.com/machine/install-machine/>
+
+#### Create a VM to host docker with docker-machine
+```docker-machine create --driver virtualbox --virtualbox-memory "4096" default```
+
+If you receive the msg `host already exists: default`, it indicates you already have a machine with this name. If you are having problems with the existing machine and want to replace it, run `docker-machine rm default`, otherwise if you already have a working docker-machine, you do not need to worry about running the `docker-machine create` cmd.
+
+#### Install docker-osx-dev 
+```
+curl -o /usr/local/bin/docker-osx-dev https://raw.githubusercontent.com/brikis98/docker-osx-dev/master/src/docker-osx-dev
+chmod +x /usr/local/bin/docker-osx-dev
+docker-osx-dev install
+cd flexbox
+docker-osx-dev #This process must run in the background
+```
 
