@@ -23,7 +23,7 @@ gulp > /tmp/flexmarket_api_gulp.out &
 
 cd ../..
 docker-machine rm default &&
-docker-machine create --driver virtualbox --virtualbox-memory "4096" --virtualbox-disk-size "50gb" default &&
+docker-machine create --driver virtualbox --virtualbox-memory "4096" --virtualbox-disk-size "50000" default &&
 printf "\n\n\n\nCreating symlink to machines\n\n\n\n"
 ln -s ~/.docker/machine/machines/ machines
 printf "\n\n\n\nLoading env vars\n\n\n\n"

@@ -98,13 +98,3 @@ docker push flexhub/flexbox_elasticsearch:latest
 ```docker-machine create --driver virtualbox --virtualbox-memory "4096" default```
 
 If you receive the msg `host already exists: default`, it indicates you already have a machine with this name. If you are having problems with the existing machine and want to replace it, run `docker-machine rm default`, otherwise if you already have a working docker-machine, you do not need to worry about running the `docker-machine create` cmd.
-
-#### Install docker-osx-dev 
-```
-curl -o /usr/local/bin/docker-osx-dev https://raw.githubusercontent.com/brikis98/docker-osx-dev/master/src/docker-osx-dev
-chmod +x /usr/local/bin/docker-osx-dev
-docker-osx-dev install
-cd flexbox
-docker-osx-dev #This process must run in the background
-```
-
