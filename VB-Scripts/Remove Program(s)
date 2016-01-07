@@ -1,0 +1,18 @@
+Dim objShell
+Set objShell = WScript.CreateObject( "WScript.Shell" )
+objShell.Run "taskkill /im teamviewer.exe", , True
+objShell.Run "taskkill /im teamviewer.exe", , True
+Teamviewer
+Sub Teamviewer()
+    On Error Resume Next
+    objShell.Run("""%ProgramFiles%\TeamViewer\Version7\uninstall.exe"" /S")
+    objShell.Run("""%ProgramFiles%\TeamViewer\Version8\uninstall.exe"" /S")
+    objShell.Run("""%ProgramFiles%\TeamViewer\Version9\uninstall.exe"" /S")
+    objShell.Run("""%ProgramFiles%\TeamViewer\uninstall.exe"" /S")
+    objShell.Run("""%ProgramFiles(x86)%\TeamViewer\Version7\uninstall.exe"" /S")
+    objShell.Run("""%ProgramFiles(x86)%\TeamViewer\Version8\uninstall.exe"" /S")
+    objShell.Run("""%ProgramFiles(x86)%\TeamViewer\Version9\uninstall.exe"" /S")
+    objShell.Run("""%ProgramFiles(x86)%\TeamViewer\uninstall.exe"" /S")
+
+End Sub
+Set objShell = Nothing
