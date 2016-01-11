@@ -1,6 +1,6 @@
 web:
   #image: 'flexhub/flexbox_web:latest'
-  build: ./FlexMarketWeb
+  build: ./FlexMarketWeb/FlexBox
   volumes:
     - "~/workspace/FlexBox/FlexMarketWeb:/src"
   ports:
@@ -13,7 +13,7 @@ web:
 
 admin:
   #image: 'flexhub/flexbox_api:latest'
-  build: ./FlexMarket
+  build: ./FlexMarket/FlexBox
   volumes:
     - "~/workspace/FlexBox/FlexMarket:/src"
   ports:
