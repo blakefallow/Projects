@@ -1,9 +1,0 @@
----
-- hosts: {{CLUSTER}}
-  sudo: yes/no
-  roles:
-    - tumf.newrelic
-  vars:
-    newrelic_license_key: yes
-    newrelic_service_state: started
-    newrelic_license_key: {{INSERT KEY HERE}}
