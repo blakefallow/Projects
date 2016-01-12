@@ -3,9 +3,9 @@
 - hosts: {{CLUSTER}}
   sudo: {{YES/NO}}
   roles:
-#New Relic - dependant on Ansible Galaxy pull down
+#New Relic - dependant on Ansible Galaxy role download
     - tumf.newrelic
-#Nginx - dependant on Ansible Galaxy pull down & template configuration
+#Nginx - dependant on Ansible Galaxy role download & template configuration
     - debo.nginx
   vars:
     newrelic_license_key: yes
