@@ -125,7 +125,7 @@ cd /vagrant
 
 if [[ ! -h ~/workspace/FlexBox ]]
 then
-    ln -s /vagrant/FlexBox ~/workspace/
+    ln -s /vagrant ~/workspace/FlexBox
 fi
 
 cd ~/workspace/FlexBox
