@@ -45,7 +45,7 @@ wVklGkmHuKX/fwBdi8hLWhWQ+ZTK1Egfy/ScEJewTFP/xR88kqWYpbai3Gdecb6L
 TJXMP0ECgYEA5S6ZkBNEnCVxQeYfCbAkl2fxkbSGnIvDbJ6bXGp/bhYfvhTjLp0O
 bH079bCzsLIAE40T17xexT3M/6vaUPFQP1lTeyIzTVUiC0vLnTHSNHdNIznpije1
 LzEkZxPGJJJ7MopMgCvhgP5tYfxxqoPMZDnouc/yqlecdZjQ6NagFBQ=
------END RSA PRIVATE KEY-----"
+-----END RSA PRIVATE KEY-----
 EOF
 
 chmod 600 ~/.ssh/git-key
