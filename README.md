@@ -1,4 +1,4 @@
-# Local Environment - Setup instructions
-
-Install Vagrant and VirtualBox
-Clone this repo and run vagrant up
+#### Local Environment Setup
+* Install Vagrant 
+* Install VirtualBox
+* `git clone git@github.com:FlexShopper/FlexBox.git && cd FlexBox && vagrant up`
