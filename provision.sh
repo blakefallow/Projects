@@ -150,7 +150,7 @@ cd FlexMarketWeb && git checkout development && git pull
 npm i --silent
 gulp
 
-cd ../FlexMarket && git checkout package_json_fix && git pull
+cd ../FlexMarket && git checkout development && git pull
 npm i --silent
 
 cd ~/workspace/FlexBox
