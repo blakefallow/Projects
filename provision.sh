@@ -1,4 +1,13 @@
 #!/bin/bash
+echo "setting up swap memory"
+shopt -s nocasematch
+fallocate -l 4096M /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo "/swapfile     none    swap    sw  0   0" | tee -a /etc/fstab
+printf "vm.swappiness=10\nvm.vfs_cache_pressure=50" | tee -a /etc/sysctl.conf && sysctl -p
+shopt -u nocasematch
 
 echo "Installing docker..."
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
