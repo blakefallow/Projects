@@ -6,7 +6,7 @@ chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 echo "/swapfile     none    swap    sw  0   0" | tee -a /etc/fstab
-printf "vm.swappiness=10\nvm.vfs_cache_pressure=50" | tee -a /etc/sysctl.conf && sysctl -p
+printf "vm.swappiness=10\nvm.vfs_cache_pressure=50\n" | tee -a /etc/sysctl.conf && sysctl -p
 shopt -u nocasematch
 
 echo "Installing docker..."
