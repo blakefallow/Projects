@@ -158,11 +158,11 @@ fi
 cd FlexMarketWeb && git checkout development && git pull
 npm i --silent
 npm i --silent
+npm rebuild node-sass
 gulp
 
 cd ../FlexMarket && git checkout development && git pull
 npm i --silent
-npm rebuild node-sass
 
 cd ~/workspace/FlexBox
 docker-compose up
