@@ -163,6 +163,7 @@ gulp
 
 cd ../FlexMarket && git checkout development && git pull
 npm i --silent
+npm i --silent
 
 cd ~/workspace/FlexBox
 docker-compose up
