@@ -4,8 +4,8 @@ web:
   volumes:
     - "~/workspace/FlexBox/FlexMarketWeb:/src"
   ports:
-    - "8080"
-    - "1234"
+    - "32773:8080"
+    - "32774:1234"
   links:
     - "admin"
     - "redis"
@@ -17,7 +17,7 @@ admin:
   volumes:
     - "~/workspace/FlexBox/FlexMarket:/src"
   ports:
-    - "3000"
+    - "32772:3000"
   links:
     - "elasticsearch"
     - "redis"
@@ -25,16 +25,16 @@ admin:
 
 elasticsearch:
   ports:
-    - "9200"
-    - "9300"
+    - "32770:9200"
+    - "32769:9300"
   image: 'flexhub/flexbox_elasticsearch:latest'
 
 mongo:
   image: 'flexhub/flexbox_mongo:latest'
   ports: 
-    - "27017"
+    - "32771:27017"
 
 redis: 
   image: redis
   ports: 
-    - "6379"
+    - "32768:6379"
