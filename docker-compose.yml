@@ -27,7 +27,7 @@ elasticsearch:
   ports:
     - "32770:9200"
     - "32769:9300"
-  image: 'flexhub/flexbox_elasticsearch:latest'
+  image: 'elasticsearch:2.2'
 
 mongo:
   image: 'flexhub/flexbox_mongo:latest'
