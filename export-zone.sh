@@ -1,6 +1,5 @@
 #!/bin/bash
 # exports DNS records from Rackspace Cloud DNS to text files
-# Depends on https://github.com/wichert/clouddns/blob/master/src/clouddns.py
 
 set -e
 
